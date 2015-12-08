@@ -42,8 +42,8 @@ func RegisterFlags(f *flag.FlagSet) {
 // called at the end of the program, however, as earlier profiles are not
 // cancelled by later profiles failing.
 func Init() error {
-	if *CPUProfileFlag != "" {
-		f, err := os.Create(*CPUProfileFlag)
+	if CPUProfileFlag != "" {
+		f, err := os.Create(CPUProfileFlag)
 		if err != nil {
 			return err
 		}
@@ -54,22 +54,22 @@ func Init() error {
 		}
 		cpuProfileFile = f
 	}
-	if *HeapProfileFlag != "" {
-		f, err := os.Create(*HeapProfileFlag)
+	if HeapProfileFlag != "" {
+		f, err := os.Create(HeapProfileFlag)
 		if err != nil {
 			return err
 		}
 		heapProfileFile = f
 	}
-	if *ThreadProfileFlag != "" {
-		f, err := os.Create(*ThreadProfileFlag)
+	if ThreadProfileFlag != "" {
+		f, err := os.Create(ThreadProfileFlag)
 		if err != nil {
 			return err
 		}
 		threadProfileFile = f
 	}
-	if *BlockProfileFlag != "" {
-		f, err := os.Create(*BlockProfileFlag)
+	if BlockProfileFlag != "" {
+		f, err := os.Create(BlockProfileFlag)
 		if err != nil {
 			return err
 		}
